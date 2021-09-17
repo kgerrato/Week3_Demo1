@@ -2,6 +2,7 @@ package com.example.week3_demo1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -17,7 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent recInt=getIntent();
+
         mTextView = (TextView) findViewById(R.id.tv1);
+        mTextView.setText(""+recInt.getIntExtra("THESUM", defaultValue:0));
         mTextView.setOnClickListener(view -> {
             ((TextView)view).setText(45);
     });
